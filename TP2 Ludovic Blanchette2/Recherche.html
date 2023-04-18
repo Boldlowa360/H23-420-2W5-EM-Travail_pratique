@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Overwatch</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://kit.fontawesome.com/9a4b12f511.css" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/9a4b12f511.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/x-icon" href="image/logo.png">
+    </head>
+    <body>
+        <header>
+            <!-- navigation -->
+            <div class="container">
+                <nav>
+                   <div class="row justify-content-evenly">
+                    <div class="col-2 navBouton"> <a href="Accueil.html" class="fa-solid fa-house">  Acceuil</a></div>
+                    <div class="col-2 navBouton"> <a href="Recherche.html" class="fa-solid fa-magnifying-glass"> Recherche</a></div>
+                    <div class="col-2 navBouton"> <a href="Favoris.html" class="fa-solid fa-star"> Favoris</a></div>
+                    </div> 
+                </nav>
+            </div>
+        </header>
+        <!--Logo-->
+            <h1>Overwatch</h1>
+            <br>
+            <img src="image/logo.png" alt="logo Overwatch" height="200" width="200" class="center">
+            <br>
+            <!-- liste des personnages-->
+        <div class="container-fluid listePersonnages">
+            <div class="row">
+                <div class="col-9">
+                    <!-- Personnages Tank-->
+                    <br>
+                    <div class="col-9"><h2>Liste des personnages</h2></div>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Tank"><img src="image/Icon-D.Va.png" alt="Icon D.Va"><h2>D.Va</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Tank"><img src="image/Icon-Reinhardt.png" alt="Icon Reinhardt"><h2>Reinhardt</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Tank"><img src="image/Icon-Orisa.png" alt="Icon Orisa"><h2>Orisa</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Tank"><img src="image/Icon-Roadhog.png" alt="Icon Chopper"><h2>Chopper</h2></div></a> 
+                    <!-- Personnages Healer-->
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages healer"><img src="image/Icon-Mercy.png" alt="Icon Ange"><h2>Ange</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages healer"><img src="image/Icon-Ana.png" alt="Icon Ana"><h2>Ana</h2></div> </a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages healer"><img src="image/Icon-kiriko.png" alt="Icon Kiriko"><h2>Kiriko</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages healer"><img src="image/Icon-Lucio.png" alt="Icon Lucio"><h2>Lucio</h2></div></a>
+                    <!-- Personnages Dps-->
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Dps"><img src="image/Icon-Hanzo.png" alt="Icon Hanzo"><h2>Hanzo</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Dps"><img src="image/Icon-Ashe.png" alt="Icon Ashe"><h2>Ashe</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Dps"><img src="image/Icon-Sojourn.png" alt="Icon Sojourn"><h2>Sojourn</h2></div></a>
+                    <a href="Detail.html"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Dps"><img src="image/Icon-TORBJÖRN.png" alt="Icon TORBJÖRN"><h2>Torbjörn</h2></div></a>
+                </div>
+                <!-- Onglet de recherche-->
+                <div class="col-3 Recherche" >
+                    <br>
+                    <h2>Recherche</h2>
+                    <br>
+                    <h5>Nom du personnage</h5>
+                    <form method="post" action="https://www.w3schools.com/action_page.php">
+                        <input type="text" name="Nom du personnage" placeholder="Orisa">
+                    
+                        <br>
+                        <h5>niveau de difficulté en mombre d'étoiles</h5>
+                    
+                        <input type="number" name="min" min="1" max="5">
+                    
+                        <br>
+                        <h5>Personnage Vedette</h5>
+                        <select name="choice" id="selection">
+                            <option value="Oui">Oui</option>
+                            <option value="Non">Non</option>
+                            <option value="Peu importe">Peu importe</option>
+                        </select>
+                        <br><br>
+                        <h5>Classes des personnages</h5>
+                        <br>
+                        <label for="Dps">Dps :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="checkbox" name="Dps" id="Dps" checked><br><br>
+                        <label for="Soigneur">Soigneur :&nbsp;</label>
+                        <input type="checkbox" name="Soigneur" id="Soigneur" checked><br><br>
+                        <label for="Tank">Tank :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <input type="checkbox" name="Tank" id="Tank" checked>
+                        <br><br><br>
+                        <button type="submit">Rechercher</button>
+                        &nbsp;&nbsp;&nbsp;
+                        <button type="reset">Réinitialiser</button>
+                        </form>
+                </div>
+                
+            </div>
+        </div>
+        <footer style="text-align: center;">
+            créé par Ludovic Blanchette   &nbsp;&nbsp;&nbsp;contenu de: overwatch.fandom.com   
+        </footer>   
+    </body>
+
+
+
+</html>
