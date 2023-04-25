@@ -1,0 +1,188 @@
+/* ------------------------------------------*/
+/*Acceuil*/
+body{
+    background-image: url(image/Fond.jpg);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+}
+h1{
+    text-align: center;
+    font-size: 5em;
+    font-family:"Arial Black";
+    color: white;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{
+    background-color: gainsboro;
+    background-attachment: fixed;
+    opacity: 75%;
+    height: 30px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-top: 2px;
+}
+footer{
+    background-color: gainsboro;
+    background-attachment: fixed;
+    opacity: 75%;
+    position: absolute;
+    bottom: 0;
+}
+.textCentré{
+    text-align: center;
+}
+.role{
+    background-color: white;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    height: 800px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.navBouton{
+    border-style: solid; 
+    border-color: midnightblue;
+    border: 2px;
+    margin-right: 0px;
+    color: midnightblue;
+}
+/*----------------------------------*/
+/*Recherche*/
+.listePersonnages{
+    background-color: white;
+    opacity: 70%;
+    margin-right: 3em;
+    margin-left: 3em;
+    border: 1em;
+    border-color: black;
+    border-style: solid;
+}
+.Personnages{
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 1em;
+    margin-top: 2em;
+    height: 14em;
+    border-style: double;
+    border-width: 5px;
+    padding-top: 50px ;
+}
+.Recherche{
+    background-color: turquoise;
+    border: 3px;
+    border-left-color: black;
+    border-left-style: dotted;
+    border-left-width: 3px;
+    padding: 20px;
+    text-align: justify;
+}
+.Tank{
+    background-image: url(image/Tank.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+.healer{
+    background-image: url(image/Healer.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+.Dps{
+    background-image: url(image/Dps.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+}
+/*------------------------------------------*/
+/* Liens */
+#LienDps{
+    color: red;
+}
+#LienHeal{
+    color: green;
+}
+#LienTank{
+    color: orange;
+}
+/*-------------------------------------------*/
+/* Detail */
+.detail{
+    background-color: aliceblue;
+    opacity: 75%;
+    margin: auto;
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.infos{
+    color: #33C4FF;
+}
+.invisible{
+    visibility: hidden;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    background-color: grey;
+    opacity: 50%    ;
+}
+.scroll{
+    overflow: scroll;
+    height: 200px;
+}
+/*-------------------------------------------*/
+.fav{
+    background-color: orange;
+    color: white;
+}
+.favoris{
+    background-color: white;
+    opacity: 70%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.imageTableau{
+    height: 100px;
+}
+.cellule{
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    top: 50%;
+}
+.Border-Favoris-paire{
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    background-color: orange;
+}
+.Border-Favoris-impaire{
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    background-color: white;
+}
+.tableau-Centré{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8em;
+}
+.lienFavoris{
+    color: black;
+}

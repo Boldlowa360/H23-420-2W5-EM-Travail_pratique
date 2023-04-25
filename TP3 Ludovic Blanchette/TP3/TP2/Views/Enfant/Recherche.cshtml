@@ -1,0 +1,135 @@
+﻿@model PageRechercheViewModel;
+
+<h1>Overwatch</h1>
+<br>
+<img src="/image/logo.png" alt="logo Overwatch" height="200" width="200" class="center">
+<br>
+<!-- liste des personnages-->
+<div class="container-fluid listePersonnages">
+    <div class="row">
+        <div class="col-9">
+            <br>
+            <div class="col-9"><h2>Liste des personnages</h2></div>
+            @foreach (var item in Model.Resultat)
+            {
+                if (item.IdParent == 1)
+                {
+
+                    <a href="~/Enfant/@item.id"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Dps"><img src=@item.image alt="Icon @item.nom"><h2>@item.nom</h2></div></a>
+                }
+                if (item.IdParent == 2)
+                {
+                    <a href="~/Enfant/@item.id"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages healer"><img src="@item.image" alt="Icon @item.nom"><h2>@item.nom</h2></div></a>
+                }
+                if (item.IdParent == 3)
+                {
+                    <a href="~/Enfant/@item.id"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Tank"><img src="@item.image" alt="Icon @item.nom"><h2> @item.nom</h2></div></a>
+                }
+            }
+
+        </div>
+        <!-- Onglet de recherche-->
+        <div class="col-3 Recherche">
+            <br>
+            <h2>Recherche</h2>
+            <br>
+            <h5>Nom du personnage</h5>
+            <form method="post" action="https://www.w3schools.com/action_page.php">
+                <input type="text" name="Nom" value="@Model.Criteres.Nom">
+
+                <br>
+                <h5>niveau de difficulté en mombre d'étoiles</h5>
+
+                <input type="number" name="Difficulté" min="1" max="3" value="@Model.Criteres.Difficulté">
+
+                <br>
+                <h5>Personnage Vedette</h5>
+                <select name="vedette" id="selection">
+
+                    @if(Model.Criteres.Vedette == "Oui")
+                    {
+                        <option value="@Model.Criteres.Vedette" selected>Oui</option>
+                    }
+                    else
+                    {
+                        <option value="@Model.Criteres.Vedette" >Oui</option>
+                    }
+                    
+                    @if(Model.Criteres.Vedette == "Non")
+                    {
+                        <option value="@Model.Criteres.Vedette" selected >Non</option>
+                    }
+                    else
+                    {
+                        <option value="@Model.Criteres.Vedette" >Non</option>
+                    }
+
+                    @if (Model.Criteres.Vedette == "Peu importe")
+                    {
+                        <option value="@Model.Criteres.Vedette" selected>Peu importe</option>
+                    }
+                    else
+                    {
+                        <option value="@Model.Criteres.Vedette">Peu importe</option>
+                    }
+
+                    
+
+
+                </select>
+                <br><br>
+                <h5>Classes des personnages</h5>
+                <br>
+                <label for="Dps">Dps :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                @if (Model.Criteres.Dps)
+                {
+                    <input type="checkbox" name="Dps" id="Dps" checked>
+
+                    <br>
+
+                    <br>
+                }
+                else
+                {
+                    <input type="checkbox" name="Dps" id="Dps">
+
+                    <br>
+
+                    <br>
+                }
+
+                <label for="Soigneur">Soigneur :&nbsp;</label>
+                @if (Model.Criteres.Soigneur)
+                {
+                    <input type="checkbox" name="Soigneur" id="Soigneur" checked>
+
+                    <br>
+
+                    <br>
+                }
+                else
+                {
+                    <input type="checkbox" name="Soigneur" id="Soigneur">
+
+                    <br>
+
+                    <br>
+                }
+                <label for="Tank">Tank :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                @if (Model.Criteres.Tank)
+                {
+                    <input type="checkbox" name="Tank" id="Tank" checked>
+                }
+                else
+                {
+                    <input type="checkbox" name="Tank" id="Tank">
+                }
+                <br><br><br>
+                <button type="submit">Rechercher</button>
+                &nbsp;&nbsp;&nbsp;
+                <button type="reset">Réinitialiser</button>
+            </form>
+        </div>
+
+    </div>
+</div>

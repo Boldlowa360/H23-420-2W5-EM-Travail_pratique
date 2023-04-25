@@ -1,0 +1,67 @@
+﻿@model Enfant;
+
+<main>
+    <h1>Overwatch</h1>
+    <br>
+    <img src="/image/logo.png" alt="logo Overwatch" height="100" width="100" class="center">
+    <br>
+    <div class="detail container">
+        <h3 class="infos">Détail du personnage</h3>
+        <br>
+        <div class="row">
+            <div class=" col-4">
+                <img src="@Model.image" alt="image @Model.nom" height="200" width="200">
+                <br><br>
+                <div class="alert alert-primary" role="alert">
+                    Personnage Important
+                </div>
+                <form method="post" action="https://www.w3schools.com/action_page.php">
+                    <input type="hidden" name="@Model.nom">
+                    <button type="submit" class="fav">Favoris <i class="fa-solid fa-plus"></i></button>
+                </form>
+            </div>
+            <div class="col-8">
+                <table>
+                    <tr>
+                        <th class="infos">Nom: &nbsp;</th>
+                        <th class="invisible">------------------------</th>
+                        <th>@Model.nom</th>
+                    </tr>
+                    <tr>
+                        <th class="infos">Rôle:</th>
+                        <th>    </th>
+                        <th>@Model.Role</th>
+                    </tr>
+                    <tr>
+                        <th class="infos">Difficulté:</th>
+                        <th>    </th>
+                        <th>@Model.difficulté / 3</th>
+                    </tr>
+                    <tr>
+                        <th class="infos">Quantité de vie: &nbsp;</th>
+                        <th>    </th>
+                        <th>@Model.hp</th>
+                    </tr>
+                    <tr>
+                        <th class="infos">Âge: &nbsp;</th>
+                        <th>    </th>
+                        <th>@Model.age</th>
+                    </tr>
+                    <tr>
+                        <th class="infos">Nationnalité:</th>
+                        <th>    </th>
+                        <th>@Model.nationnalité</th>
+                    </tr>
+                </table>
+                <br><br>
+                <h5 class="infos">Histoire:</h5>
+                <p style=" text-align: justify;" class="scroll">
+                    @Model.description
+                </p>
+
+
+            </div>
+        </div>
+
+    </div>
+</main>

@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<main class="favoris">
+    <br>
+    <h2 style="text-align: center;">Liste des Héros préférés</h2>
+    <div class="alert alert-warning" style="width: 300px; text-align: center;">Nombre de favoris: 4</div>
+
+    <table class="table-striped Border-Favoris tableau-Centré">
+        <tr class="Border-Favoris-paire">
+            <th class="cellule" style="background-color: grey;">image</th>
+            <th class="cellule" style="background-color: grey;">Nom du personnage</th>
+            <th class="cellule" style="background-color: grey;">Rôle</th>
+            <th class="cellule" style="background-color: grey;">Nationnalité</th>
+            <th class="cellule" style="background-color: grey;">Âge</th>
+            <th class="cellule" style="background-color: grey;"></th>
+        </tr>
+        <tr class="Border-Favoris-impaire">
+            <th class="cellule Border-Favoris"><img src="/image/Icon-Reinhardt.png" alt="Icon Reinhardt"></th>
+            <th class="cellule Border-Favoris"><a class="lienFavoris" href="~/Enfant/2">Reinhardt</a></th>
+            <th class="cellule Border-Favoris">Tank</th>
+            <th class="cellule Border-Favoris">Allemand</th>
+            <th class="cellule Border-Favoris">61</th>
+            <th class="cellule Border-Favoris">
+                <form method="post" action="https://www.w3schools.com/action_page.php">
+                    <input type="hidden" name="Reinhardt" value="Reinhardt">
+                    <button type="submit"><i class="fa-solid fa-user-xmark"></i></button>
+                </form>
+            </th>
+        </tr>
+        <tr class="Border-Favoris-paire">
+            <th class="cellule Border-Favoris"><img src="/image/Icon-Ana.png" alt="Icon Ana"></th>
+            <th class="cellule Border-Favoris"><a class="lienFavoris" href="~/Enfant/12">Ana</a></th>
+            <th class="cellule Border-Favoris">Soigneur</th>
+            <th class="cellule Border-Favoris">Égyptienne</th>
+            <th class="cellule Border-Favoris">60</th>
+            <th class="cellule Border-Favoris">
+                <form method="post" action="https://www.w3schools.com/action_page.php">
+                    <input type="hidden" name="Ana" value="Ana">
+                    <button type="submit"><i class="fa-solid fa-user-xmark"></i></button>
+                </form>
+            </th>
+        </tr>
+        <tr class="Border-Favoris-impaire">
+            <th class="cellule Border-Favoris"><img src="/image/Icon-Ashe.png" alt="Icon Ashe"></th>
+            <th class="cellule Border-Favoris"><a class="lienFavoris" href="/Enfant/7">Ashe</a></th>
+            <th class="cellule Border-Favoris">Dps</th>
+            <th class="cellule Border-Favoris">Americain</th>
+            <th class="cellule Border-Favoris">39</th>
+            <th class="cellule Border-Favoris">
+                <form method="post" action="https://www.w3schools.com/action_page.php">
+                    <input type="hidden" name="Ashe" value="Ashe">
+                    <button type="submit"><i class="fa-solid fa-user-xmark"></i></button>
+                </form>
+            </th>
+        </tr>
+        <tr class="Border-Favoris-paire">
+            <th class="cellule Border-Favoris"><img src="/image/Icon-Lucio.png" alt="Icon Lucio"></th>
+            <th class="cellule Border-Favoris"><a class="lienFavoris" href="/Enfant/14">Lucio</a></th>
+            <th class="cellule Border-Favoris">Soigneur</th>
+            <th class="cellule Border-Favoris">Brésilien</th>
+            <th class="cellule Border-Favoris">26</th>
+            <th class="cellule Border-Favoris">
+                <form method="post" action="https://www.w3schools.com/action_page.php">
+                    <input type="hidden" name="Lucio" value="Lucio">
+                    <button type="submit"><i class="fa-solid fa-user-xmark"></i></button>
+                </form>
+            </th>
+        </tr>
+
+    </table>
+</main>
