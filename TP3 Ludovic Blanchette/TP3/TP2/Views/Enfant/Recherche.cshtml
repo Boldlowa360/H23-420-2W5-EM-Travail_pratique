@@ -40,7 +40,11 @@
                 <br>
                 <h5>niveau de difficulté en mombre d'étoiles</h5>
 
+<<<<<<< HEAD
                 <input type="number" name="Difficulté" min="0" max="3" value="@(Model.Criteres.Difficulté)">
+=======
+                <input type="number" name="Difficulté" min="1" max="3" value="@(Model.Criteres.Difficulté)">
+>>>>>>> main
 
                 <br>
                 <h5>Personnage favoris</h5>
@@ -48,11 +52,19 @@
 
                     @if (Model.Criteres.Vedette == "Oui")
                     {
+<<<<<<< HEAD
                         <option value="@(Model.Criteres.Vedette)">Oui</option>
                     }
                     else
                     {
                         <option value="@(Model.Criteres.Vedette)">Oui</option>
+=======
+                        <option value="@(Model.Criteres.Vedette)" selected>Oui</option>
+                    }
+                    else
+                    {
+                        <option value="@(Model.Criteres.Vedette)" >Oui</option>
+>>>>>>> main
                     }
 
                     @if (Model.Criteres.Vedette == "Non")
