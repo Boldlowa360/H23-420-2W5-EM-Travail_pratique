@@ -23,5 +23,7 @@
         public int difficulté { get; set; }
 
         public int hp { get; set; }
+
+        public bool Favoris { get; set; }
     }
 }
