@@ -34,25 +34,25 @@
             <h2>Recherche</h2>
             <br>
             <h5>Nom du personnage</h5>
-            <form method="post" action="https://www.w3schools.com/action_page.php">
-                <input type="text" name="Nom" value="@Model.Criteres.Nom">
+            <form method="get" action="Filtrer">
+                <input type="text" name="Nom" value="@(Model.Criteres.Nom)">
 
                 <br>
                 <h5>niveau de difficulté en mombre d'étoiles</h5>
 
-                <input type="number" name="Difficulté" min="1" max="3" value="@Model.Criteres.Difficulté">
+                <input type="number" name="Difficulté" min="1" max="3" value="@(Model.Criteres.Difficulté)">
 
                 <br>
-                <h5>Personnage Vedette</h5>
+                <h5>Personnage favoris</h5>
                 <select name="vedette" id="selection">
 
                     @if(Model.Criteres.Vedette == "Oui")
                     {
-                        <option value="@Model.Criteres.Vedette" selected>Oui</option>
+                        <option value="@(Model.Criteres.Vedette)" selected>Oui</option>
                     }
                     else
                     {
-                        <option value="@Model.Criteres.Vedette" >Oui</option>
+                        <option value="@(Model.Criteres.Vedette)" >Oui</option>
                     }
                     
                     @if(Model.Criteres.Vedette == "Non")

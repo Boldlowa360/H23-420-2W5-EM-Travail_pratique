@@ -51,5 +51,46 @@ namespace TP2.Controllers
             return View("Detail",Hero);
         }
 
+        [Route("/Enfant/Recherche/Filtrer")]
+        [Route("/enfant/Filtrer")]
+        [Route("/Filtrer")]
+        public IActionResult Filtrer(CritereRechercheViewModel critere)
+        {
+            IEnumerable<Enfant> donnees = DB.Enfants;
+
+            //Filtre par mots clé
+            if(critere.Nom != null)
+            {
+                donnees = this.DB.Enfants.Where(h => h.nom.ToUpper().Contains(critere.Nom.ToUpper()));
+            }
+            //filtre par niveau de difficulté
+            if(critere.Difficulté != null)
+            {
+                donnees = this.DB.Enfants.Where(h => h.difficulté == critere.Difficulté);
+            }
+            //filtre par Favoris
+            //Oui
+            if(critere.Vedette == "Oui")
+            {
+                donnees = this.DB.Enfants.Where(h => h.Favoris == true);
+            }
+            //Non
+            if(critere.Vedette == "Non")
+            {
+                donnees = this.DB.Enfants.Where(h => h.Favoris == false);
+            }
+            //peu importe
+            if(critere.Vedette == "Peu importe")
+            {
+                donnees = this.DB.Enfants.ToList();
+            }
+
+            var model = new PageRechercheViewModel();
+            model.Criteres = new CritereRechercheViewModel();
+            model.Resultat = donnees.ToList();
+
+            return View(nameof(Recherche),model);
+        }
+
     }
 }
