@@ -45,6 +45,7 @@
 
                 <br>
                 <h5>Personnage favoris</h5>
+
                 <select name="Favoris" id="selection">
 
                     @if (Model.Criteres.Favoris == "Tous")
@@ -55,6 +56,7 @@
                     {
                         <option value="Tous">Tous</option>
                     }
+
                     @if (Model.Criteres.Favoris == "Oui")
                     {
                         <option value="Oui">Oui</option>
@@ -63,17 +65,20 @@
                     {
 
                         <option value="Oui">Oui</option>
-                    }
 
+                    }
 
                     @if (Model.Criteres.Favoris == "Non")
                     {
-                        <option value="Non">Non</option>
+                        <option value="Non" >Non</option>
+
                     }
                     else
                     {
                         <option value="Non">Non</option>
                     }
+
+                    
 
 
 

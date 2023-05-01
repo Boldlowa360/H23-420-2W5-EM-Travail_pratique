@@ -2,6 +2,7 @@
 using TP2.ViewModels;
 using TP2.Models;
 using Microsoft.AspNetCore.Http.Metadata;
+using System.Reflection;
 
 namespace TP2.Controllers
 {
@@ -60,7 +61,12 @@ namespace TP2.Controllers
             IEnumerable<Enfant> donnees = DB.Enfants;
 
 
+
             //filtre par Favoris        
+
+            //filtre par Favoris
+
+
             if (critere.Nom != null)
             {
                 donnees = donnees.Where(h => h.nom.ToUpper().Contains(critere.Nom.ToUpper()));
@@ -70,7 +76,10 @@ namespace TP2.Controllers
             {
                 donnees = donnees.Where(h => h.difficulté >= 1);
             }
+
             //Oui
+
+
             if (critere.Favoris == "Oui")
             {
                 donnees = donnees.Where(h => h.Favoris == true);
@@ -83,6 +92,21 @@ namespace TP2.Controllers
             //Tous
             if (critere.Favoris == "Tous")
             {
+
+
+            }
+            //Par niveau de difficulté
+            if (critere.Difficulté == 1)
+            {
+                donnees = donnees.Where(h => h.difficulté == 1);
+            }
+            if (critere.Difficulté == 2)
+            {
+                donnees = donnees.Where(h => h.difficulté == 2);
+            }
+            if (critere.Difficulté == 3)
+            {
+                donnees = donnees.Where(h => h.difficulté == 3);
 
             }
             //Par niveau de difficulté
@@ -114,8 +138,13 @@ namespace TP2.Controllers
             {
                 donnees = donnees.Where(h => h.IdParent == 3);
             }
-            //Tous  
-            
+            //Tous
+            if (critere.Dps == true && critere.Soigneur == true && critere.Tank == true)
+            {
+                donnees = donnees.Where(h => h.IdParent == 1 || h.IdParent == 2 || h.IdParent == 3);
+            }
+
+
 
 
 
