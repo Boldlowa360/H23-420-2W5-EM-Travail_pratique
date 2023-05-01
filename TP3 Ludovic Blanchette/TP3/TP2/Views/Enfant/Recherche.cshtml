@@ -38,52 +38,44 @@
                 <input type="text" name="Nom" value="@(Model.Criteres.Nom)">
 
                 <br>
-                <h5>niveau de difficulté en mombre d'étoiles</h5>
+                <h5>niveau minimum de difficulté en mombre d'étoiles</h5>
 
-<<<<<<< HEAD
                 <input type="number" name="Difficulté" min="0" max="3" value="@(Model.Criteres.Difficulté)">
-=======
-                <input type="number" name="Difficulté" min="1" max="3" value="@(Model.Criteres.Difficulté)">
->>>>>>> main
+
 
                 <br>
                 <h5>Personnage favoris</h5>
-                <select name="vedette" id="selection">
+                <select name="Favoris" id="selection" >
 
-                    @if (Model.Criteres.Vedette == "Oui")
+                    @if (Model.Criteres.Favoris == "Tous")
                     {
-<<<<<<< HEAD
-                        <option value="@(Model.Criteres.Vedette)">Oui</option>
+                        <option value="Tous" >Tous</option>
                     }
                     else
                     {
-                        <option value="@(Model.Criteres.Vedette)">Oui</option>
-=======
-                        <option value="@(Model.Criteres.Vedette)" selected>Oui</option>
+                        <option value="Tous">Tous</option>
+                    }
+                    @if (Model.Criteres.Favoris == "Oui")
+                    {
+                        <option value="Oui">Oui</option>
                     }
                     else
                     {
-                        <option value="@(Model.Criteres.Vedette)" >Oui</option>
->>>>>>> main
+
+                        <option value="Oui" >Oui</option>
+                    }
+                    
+
+                    @if (Model.Criteres.Favoris == "Non")
+                    {
+                        <option value="Non" >Non</option>
+                    }
+                    else
+                    {
+                        <option value="Non">Non</option>
                     }
 
-                    @if (Model.Criteres.Vedette == "Non")
-                    {
-                        <option value="@Model.Criteres.Vedette">Non</option>
-                    }
-                    else
-                    {
-                        <option value="@Model.Criteres.Vedette">Non</option>
-                    }
-
-                    @if (Model.Criteres.Vedette == "Peu importe")
-                    {
-                        <option value="@Model.Criteres.Vedette" selected>Peu importe</option>
-                    }
-                    else
-                    {
-                        <option value="@Model.Criteres.Vedette">Peu importe</option>
-                    }
+                    
 
 
 
