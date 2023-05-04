@@ -62,24 +62,15 @@ namespace TP2.Controllers
 
 
 
-            //filtre par Favoris        
-
-            //filtre par Favoris
 
 
+            //filtre par Nom
             if (critere.Nom != null)
             {
                 donnees = donnees.Where(h => h.nom.ToUpper().Contains(critere.Nom.ToUpper()));
             }
-            //filtre par niveau de difficulté
-            if (critere.Difficulté == 1)
-            {
-                donnees = donnees.Where(h => h.difficulté >= 1);
-            }
 
             //Oui
-
-
             if (critere.Favoris == "Oui")
             {
                 donnees = donnees.Where(h => h.Favoris == true);
@@ -109,39 +100,10 @@ namespace TP2.Controllers
                 donnees = donnees.Where(h => h.difficulté == 3);
 
             }
-            //Par niveau de difficulté
-            if (critere.Difficulté == 1)
+            //Filtre par roles
+            if(critere.Soigneur || critere.Tank || critere.Dps)
             {
-                donnees = donnees.Where(h => h.difficulté == 1);
-            }
-            if (critere.Difficulté == 2)
-            {
-                donnees = donnees.Where(h => h.difficulté == 2);
-            }
-            if (critere.Difficulté == 3)
-            {
-                donnees = donnees.Where(h => h.difficulté == 3);
-            }
-            //par role
-            // DPS
-            if (critere.Dps == true)
-            {
-                donnees = donnees.Where(h => h.IdParent == 1);
-            }
-            //Healer
-            if (critere.Soigneur == true)
-            {
-                donnees = donnees.Where(h => h.IdParent == 2);
-            }
-            //Tank
-            if (critere.Tank == true)
-            {
-                donnees = donnees.Where(h => h.IdParent == 3);
-            }
-            //Tous
-            if (critere.Dps == true && critere.Soigneur == true && critere.Tank == true)
-            {
-                donnees = donnees.Where(h => h.IdParent == 1 || h.IdParent == 2 || h.IdParent == 3);
+                donnees = donnees.Where(h => (h.IdParent == 1 && critere.Dps) || (h.IdParent == 2 && critere.Soigneur) || (h.IdParent == 3 && critere.Tank));
             }
 
 
