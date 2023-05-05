@@ -1,1 +1,23 @@
-﻿
+﻿@model Enfant;
+<main>
+    <h2>Suppression du personnage</h2>
+    <h5>Voulez-vous vraiment le supprimer?</h5>
+    <h5>Héro: </h5>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>@Model.id</th>
+        </tr>
+        <tr>
+            <th>Nom du personnage</th>
+            <th>@Model.nom</th>
+        </tr>
+        <tr>
+            <th>Image du personnage</th>
+            <th><img src="@Model.image" alt="image @Model.nom"/></th>
+        </tr>
+    </table>
+    <form>
+
+    </form>
+</main>
