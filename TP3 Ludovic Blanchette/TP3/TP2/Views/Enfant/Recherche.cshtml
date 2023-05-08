@@ -10,7 +10,7 @@
         <div class="col-9">
             <br>
             <div class="col-9"><h2>Liste des personnages</h2></div>
-            @if(Model.Resultat.Count == 0)
+            @if (Model.Resultat.Count == 0)
             {
                 <p>Aucun héro trouvé :(</p>
             }
@@ -18,16 +18,25 @@
             {
                 if (item.IdParent == 1)
                 {
-
-                    <a href="~/Enfant/@item.id"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Dps"><img src=@item.image alt="Icon @item.nom"><h2>@item.nom</h2></div></a>
+                    <div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Dps">
+                        <a href="~/GestionEnfant/Delete/@item.id"><i class="fa-solid fa-trash-can SupprimerEnfant"></i></a>
+                        <a href="~/Enfant/@item.id"><img src="@item.image" alt="Icon @item.nom"><h2>@item.nom</h2></a>
+                    </div>
                 }
+
                 if (item.IdParent == 2)
                 {
-                    <a href="~/Enfant/@item.id"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages healer"><img src="@item.image" alt="Icon @item.nom"><h2>@item.nom</h2></div></a>
+                    <div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages healer">
+                        <a href="~/GestionEnfant/Delete/@item.id"><i class="fa-solid fa-trash-can SupprimerEnfant"></i></a>
+                        <a href="~/Enfant/@item.id"><img src="@item.image" alt="Icon @item.nom"><h2>@item.nom</h2></a>
+                    </div>
                 }
                 if (item.IdParent == 3)
                 {
-                    <a href="~/Enfant/@item.id"><div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Tank"><img src="@item.image" alt="Icon @item.nom"><h2> @item.nom</h2></div></a>
+                    <div class="col-lg-3 col-xl-3 col-xxl-3 col-sm-9 Personnages Tank">
+                        <a href="~/GestionEnfant/Delete/@item.id"><i class="fa-solid fa-trash-can SupprimerEnfant"></i></a>
+                        <a href="~/Enfant/@item.id"><img src="@item.image" alt="Icon @item.nom"><h2>@item.nom</h2></a>
+                    </div>
                 }
             }
 
@@ -74,7 +83,7 @@
 
                     @if (Model.Criteres.Favoris == "Non")
                     {
-                        <option value="Non" >Non</option>
+                        <option value="Non">Non</option>
 
                     }
                     else
@@ -82,7 +91,7 @@
                         <option value="Non">Non</option>
                     }
 
-                    
+
 
 
 

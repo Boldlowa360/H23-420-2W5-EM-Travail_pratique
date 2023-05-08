@@ -77,6 +77,7 @@ footer{
     border-style: double;
     border-width: 5px;
     padding-top: 50px ;
+    position:relative;
 }
 .Recherche{
     background-color: turquoise;
@@ -185,4 +186,13 @@ footer {
 }
 .lienFavoris{
     color: black;
+}
+.delete {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.SupprimerEnfant{
+    position:absolute;
+    right:20px;
+    top:10px;
 }

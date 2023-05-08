@@ -8,25 +8,37 @@ namespace TP2.Controllers
     {
         private Database DB { get; set; }
 
+        public GestionEnfantController(Database db)
+        {
+            this.DB = db;
+        }
+
         [Route("/GestionEnfant/Delete/{id}")]
         public ActionResult Delete(int id)
         {
-            return View();
+            Enfant enfant = DB.Enfants.Where(h => h.id == id).SingleOrDefault();
+            if(enfant != null)
+            {
+                return View(enfant);
+            }
+            return View("NotFound");
         }
 
         // POST: GestionEnfantController/Delete/5
+        [Route("/GestionEnfant/Delete/{id}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id,Enfant enfant)
         {
-            try
+            enfant = DB.Enfants.Where(h => h.id == id).SingleOrDefault();
+            if (enfant != null)
             {
-                return RedirectToAction(nameof(Index));
+                var parent = DB.Parents.Where(r => r.Id == enfant.IdParent).SingleOrDefault();
+                parent.Enfants.Remove(enfant);
+                DB.Enfants.Remove(enfant);
+                
             }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index","Home");
         }
     }
 }

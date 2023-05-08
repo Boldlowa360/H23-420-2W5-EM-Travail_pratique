@@ -1,23 +1,29 @@
-﻿@model Enfant;
-<main>
+﻿@model TP2.Models.Enfant
+<body >
+    <main class=" container tableau-Centré textCentré">
     <h2>Suppression du personnage</h2>
     <h5>Voulez-vous vraiment le supprimer?</h5>
     <h5>Héro: </h5>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>@Model.id</th>
+    <div class="row">
+        <table >
+        <tr class="delete col-4">
+            <th class="delete col-2">ID</th>
+            <th class="delete col-2">@Model.id</th>
         </tr>
-        <tr>
-            <th>Nom du personnage</th>
-            <th>@Model.nom</th>
+        <tr class="delete col-4">
+            <th class="delete col-2">Nom du personnage</th>
+            <th class="delete col-2">@Model.nom</th>
         </tr>
-        <tr>
-            <th>Image du personnage</th>
-            <th><img src="@Model.image" alt="image @Model.nom"/></th>
+        <tr class="delete col-4">
+            <th class="delete col-2">Image du personnage</th>
+            <th class="delete col-2"><img src="@Model.image" alt="image @Model.nom"/></th>
         </tr>
     </table>
-    <form>
-
+    </div>
+  
+    <form asp-action="Delete">
+        <input type="submit" value="Supprimer" class="btn btn-danger"></input>
     </form>
 </main>
+
+</body>
