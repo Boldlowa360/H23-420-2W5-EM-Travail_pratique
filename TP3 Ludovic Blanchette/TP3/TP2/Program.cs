@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using TP2.Models;
+using System;
 
 var builder = WebApplication.CreateBuilder(args); // Crée une web app avec les paramètres envoyés
 builder.Services.AddControllersWithViews(); // Permet MVC
@@ -24,6 +25,7 @@ else
     app.UseStaticFiles();
 }
 
+app.UseSession();
 app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
@@ -35,7 +37,6 @@ app.UseEndpoints(endpoints =>
 
 app.MapRazorPages();
 app.Run();
-app.UseSession();
 
 // Doc
 // Environnements: https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-7.0

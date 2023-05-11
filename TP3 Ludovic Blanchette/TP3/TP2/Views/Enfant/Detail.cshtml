@@ -15,9 +15,9 @@
                 <div class="alert alert-primary" role="alert">
                     Personnage Important
                 </div>
-                <form method="post" action="https://www.w3schools.com/action_page.php">
-                    <input type="hidden" name="@Model.nom">
-                    <button type="submit" class="fav">Favoris <i class="fa-solid fa-plus"></i></button>
+                <form asp-controller="Favoris" asp-action="AjouterUnEnfant" method="post">
+                   <input type="hidden" name="id" value="@Model.id">
+                   <button type="submit" class="fav">Favoris <i class="fa-solid fa-plus"></i></button>
                 </form>
             </div>
             <div class="col-8">

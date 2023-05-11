@@ -1,0 +1,37 @@
+﻿@model IEnumerable<TP2.Models.Enfant>
+@{
+    Layout = "_Layout";
+}
+
+<main class="favoris">
+    <br>
+    <h2 style="text-align: center;">Liste des Héros préférés</h2>
+    <div class="alert alert-warning" style="width: 300px; text-align: center;">Nombre de favoris: @Model.Count()</div>
+
+    <table class="table-striped Border-Favoris tableau-Centré">
+        <tr class="Border-Favoris-paire">
+            <th class="cellule" style="background-color: grey;">image</th>
+            <th class="cellule" style="background-color: grey;">Nom du personnage</th>
+            <th class="cellule" style="background-color: grey;">Rôle</th>
+            <th class="cellule" style="background-color: grey;">Nationnalité</th>
+            <th class="cellule" style="background-color: grey;">Âge</th>
+            <th class="cellule" style="background-color: grey;"></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr class="Border-Favoris-impaire">
+            <th class="cellule Border-Favoris"><img src=@item.image alt="Icon Reinhardt"></th>
+            <th class="cellule Border-Favoris"><a class="lienFavoris" href="~/Enfant/2">@item.nom</a></th>
+            <th class="cellule Border-Favoris">@item.Role</th>
+            <th class="cellule Border-Favoris">@item.nationnalité</th>
+            <th class="cellule Border-Favoris">@item.age</th>
+            <th class="cellule Border-Favoris">
+                <form asp-controller="Favoris" asp-action="SupprimerUnEnfant" method="post">
+                    <input type="hidden" name=id value=@item.id>
+                    <button type="submit"><i class="fa-solid fa-user-xmark"></i></button>
+                </form>
+            </th>
+        </tr>
+        }
+    </table>
+</main>

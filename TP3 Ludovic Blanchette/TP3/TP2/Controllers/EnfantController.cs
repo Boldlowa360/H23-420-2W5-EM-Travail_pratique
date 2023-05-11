@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿ using Microsoft.AspNetCore.Mvc;
 using TP2.ViewModels;
 using TP2.Models;
 using Microsoft.AspNetCore.Http.Metadata;
@@ -106,14 +106,13 @@ namespace TP2.Controllers
                 donnees = donnees.Where(h => (h.IdParent == 1 && critere.Dps) || (h.IdParent == 2 && critere.Soigneur) || (h.IdParent == 3 && critere.Tank));
             }
 
-
-
-
-
-
             var model = new PageRechercheViewModel();
             model.Criteres = new CritereRechercheViewModel();
             model.Resultat = donnees.ToList();
+            if(model.Resultat.Count == 0)
+            {
+                return View("NotFound");
+            }
 
             return View(nameof(Recherche), model);
         }

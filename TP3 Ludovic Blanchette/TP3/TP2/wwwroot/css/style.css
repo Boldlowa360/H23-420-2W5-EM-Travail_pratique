@@ -89,19 +89,19 @@ footer{
     text-align: justify;
 }
 .Tank{
-    background-image: url(image/Tank.png);
+    background-image: url(/image/Tank.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
 }
 .healer{
-    background-image: url(image/Healer.png);
+    background-image: url(/image/Healer.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
 }
 .Dps{
-    background-image: url(image/Dps.png);
+    background-image: url(/image/Dps.png);
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
